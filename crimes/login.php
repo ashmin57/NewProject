@@ -21,7 +21,7 @@
                             ?> -->
                         <div class="textbox">
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            <input type="text" placeholder="Username/Email" name="username" value="" autocomplete="off" required>
+                            <input type="text" placeholder="Username/Phone" maxlength="10" name="username" value="" autocomplete="off" required>
                         </div>
                         <div class="textbox">
                             <i class="fa fa-key" aria-hidden="true"></i>

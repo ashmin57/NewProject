@@ -15,12 +15,12 @@
         if($row["usertype"] == "user")
             {
                 $_SESSION["username"] = $username;
-                header("location:complaintdetail.php");
+                header("location:update.php");
             }
             elseif($row["usertype"]=="admin")
             {
                 $_SESSION["admin"] = $username;
-                header("location:admin/dashboard.php");
+                header("location:admin/dash.php");
             }
             else
             {

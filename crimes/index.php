@@ -25,7 +25,7 @@
                 <input type="file" name="file" id="file" accept="image/png, image/jpeg">
                 <input type="text" maxlength="10" placeholder="Mobile Number" name="phone" id="phone">
                 <br>
-                <textarea name="description" id="" cols="60" rows="2" placeholder="Describe Crime"></textarea>
+                <textarea name="description" id="" cols="60" rows="2" placeholder="Describe Crime with Address"></textarea>
                 <br><button name="Submit" onclick=" validation()">Submit</button>
             </form>
     

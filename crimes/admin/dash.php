@@ -37,7 +37,7 @@
                   $sql_get1 = mysqli_query($conn,"select * from complaint where status = 0");
                   if(mysqli_num_rows($sql_get)>0){
                     while($result = mysqli_fetch_assoc($sql_get1)){
-                        echo '<a class="dropdown-item text-danger" href="read_msg.php?id='.$result['cId'].'">'.$result['description'].'</a>';
+                        echo '<a class="dropdown-item text-danger" href="../read_msg.php?id='.$result['cId'].'">'.$result['description'].'</a>';
                         echo'<div class="dropdown-divider"></div>';
                     }
                   }
@@ -86,11 +86,22 @@
             </ul>
         </div>
         <div class="main">
-            <div class="cards">
-                <div class="card">
-                    <div class="card-content">
-                            <div class="number">15</div>
-                            <div class="card-name">Users</div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-content">
+                    
+                            <div class="number">
+                            <?php
+
+                                                                        
+                            $sql = "SELECT cId FROM complaint ORDER BY cId";
+                            $result=mysqli_query($conn,$sql);
+                            $row = mysqli_num_rows($result);
+                            echo $row;
+                            ?>
+                    </div>
+                    
+                            <div class="card-name">Crime</div>
                     </div>
                     <div class="icon-box">
                         <i class="fas fa-user-graduate"></i>
@@ -98,24 +109,45 @@
                 </div>
                 <div class="card">
                     <div class="card-content">
-                        <div class="number">2</div>
-                        <div class="card-name">Admin</div>
+                    <div class="number">
+                    <?php
+
+                                                                        
+                            $sql = "SELECT cid FROM complaint ORDER BY cid";
+                            $result=mysqli_query($conn,$sql);
+                            $row = mysqli_num_rows($result);
+                            echo $row;
+                            ?>
+                    </div>
+                        <div class="card-name"> <a href="../complaintdetail.php">Complaint</a> </div>
                     </div>
                     <div class="icon-box">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                    <i class="fas fa-users"></i>
+                        
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-content">
-                        <div class="number">20</div>
-                        <div class="card-name">Complaints</div>
+                        <div class="number">
+
+                        <?php
+
+                            $sql = "SELECT cid FROM complaint ORDER BY cid";
+                            $result=mysqli_query($conn,$sql);
+                            $row = mysqli_num_rows($result);
+                            echo $row;
+                            ?>
+
+                        </div>
+                        <div class="card-name"> <a href="../information.php">Gather Info</a> </div>
                     </div>
                     <div class="icon-box">
-                        <i class="fas fa-users"></i>
+                    <i class="fas fa-chalkboard-teacher"></i>
                     </div>
                 </div>
-            </div>
-        </div>
+                <br>
+                
+                </div>
        
     </div>
    

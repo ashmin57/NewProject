@@ -3,7 +3,7 @@
  if(!isset($_SESSION["admin"])){
      header("location:login.php");
  }
-include "incude/db_config.php";
+include "include/db_config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,37 +20,26 @@ include "incude/db_config.php";
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Fullname</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Citzen_id</th>
-      <th scope="col">Email</th>
       <th scope="col">Username</th>
       <th scope="col">Password</th>
+      <th scope="col">Usertype</th>
     </tr>
   </thead>
   <tbody>
   <?php
-      $sql="Select * from`users` ";
+      $sql="Select * from`user` ";
       $result=mysqli_query($conn,$sql);
       if($result){
       while($row=mysqli_fetch_assoc($result)){
-        $id=$row['id'];
-        $fullname=$row['fullname'];
-        $address=$row['address'];
-        $cit_id=$row['cit_id'];
-        $email=$row['email'];
-        $phone=$row['phone'];
+        $id=$row['uId'];
         $username = $row['username'];
         $password=$row['password'];
+        $usertype=$row['usertype'];
         echo'<tr>
           <th scope="row">'.$id.'</th>
-          <td>'.$fullname.'</td>
-          <td>'.$address.'</td>
-          <td>'.$phone.'</td>
-          <td>'.$cit_id.'</td>
-          <td>'.$email.'</td>
           <td>'.$username.'</td>
           <td>'.$password.'</td>
+          <td>'.$usertype.'</td>
           <td>
         <button class="btn btn-danger"><a href="deleteuser.php?deleteid='.$id.'"
         class="text-light">Delete </a></button>
